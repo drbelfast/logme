@@ -1,15 +1,12 @@
-import { connect } from 'react-redux'
-import HomeView from '../components/HomeView'
-import { submitMessage } from '../modules/messages'
+import React from 'react'
+import MessagesContainer from './MessagesContainer'
+import './HomeView.scss'
 
-const mapDispatchToProps = {
-  submitMsg: (msg, date) => submitMessage(msg, date)
-}
+const Home = () => (
+  <div>
+    <h1>This is Home</h1>
+    <MessagesContainer />
+  </div>
+)
 
-
-const mapStateToProps = (state) => ({
-    msgs: state.msg 
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView)
+export default Home
