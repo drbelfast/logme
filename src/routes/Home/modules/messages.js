@@ -6,11 +6,12 @@ export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE'
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function submitMessage () {
+
+export function submitMessage (msg, date) {
   return {
     type : SUBMIT_MESSAGE,
-    msg: "hello",
-    date: "new-year" 
+    msg: msg,
+    date: date 
   }
 }
 
@@ -18,9 +19,8 @@ export function submitMessage () {
 // Reducer
 // ------------------------------------
 
-
 const msgReducer = (state = [], action) => {
-  console.log(action)
+
   switch (action.type) {
     case SUBMIT_MESSAGE:
       return [

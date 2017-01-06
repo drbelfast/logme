@@ -1,18 +1,14 @@
 import { connect } from 'react-redux'
 import HomeView from '../components/HomeView'
-import submitMessage from '../modules/messages'
+import { submitMessage } from '../modules/messages'
+
 const mapDispatchToProps = {
-  submitMsg: function() {
-    return {
-      type: 'SUBMIT_MESSAGE',
-      date: '12',
-      msg: 'diudiu'
-    }
-  }
+  submitMsg: (msg, date) => submitMessage(msg, date)
 }
 
+
 const mapStateToProps = (state) => ({
-    msg: state.msg 
+    msgs: state.msg 
 })
 
 
