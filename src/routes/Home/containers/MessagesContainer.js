@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
 import MessagesView from '../components/MessagesView'
-import { submitMessage } from '../modules/messages'
+import { submitMessage, deleteMessage } from '../modules/messages'
 
 const mapDispatchToProps = {
-  submitMsg: (msg, date) => submitMessage(msg, date)
+  submitMsg: (msg, date) => submitMessage(msg, date),
+  deleteMsg: (id) => deleteMessage(id)
 }
 
 
 const mapStateToProps = (state) => ({
-    msgs: state.msg 
+    msgs: state.msgs
 })
 
 
