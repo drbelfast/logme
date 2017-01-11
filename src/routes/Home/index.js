@@ -10,10 +10,12 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const Home = require('./containers/HomeContainer').default
-      const reducer = require('./modules/messages').default
+      const msgReducer = require('./modules/messages').default
+      const editReducer = require('./modules/edit').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'msgs', reducer })
+      injectReducer(store, { key: 'msgs', reducer: msgReducer })
+      injectReducer(store, { key: 'editting', reducer: editReducer})
 
       /*  Return getComponent   */
       cb(null, Home )

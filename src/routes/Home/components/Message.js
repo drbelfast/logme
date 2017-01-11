@@ -26,7 +26,7 @@ class Message extends React.Component {
       <Item.Content>
         <Item.Meta>
           <span style={styles.date} >{this.getDate(msg.date)}</span>
-          <MsgDropdown deleteMsg={deleteMsg} id={msg.id}/>
+          <MsgDropdown id={msg.id} deleteMsg={deleteMsg}/>
         </Item.Meta>
         <Item.Description>{msg.text}</Item.Description>
       </Item.Content>

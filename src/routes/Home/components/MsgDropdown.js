@@ -13,7 +13,7 @@ const MsgDropdown = (props) => {
     <Dropdown style={styles.dropdown}>
       <Dropdown.Menu>
         <Dropdown.Item onClick={() => deleteMsg(id)}>Delete</Dropdown.Item>
-        <Dropdown.Item>foo</Dropdown.Item>
+        <Dropdown.Item>Edit</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )

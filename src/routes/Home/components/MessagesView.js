@@ -1,21 +1,24 @@
 import React, { Component } from 'react'
 import { Grid, Button, Form, Item, Card } from 'semantic-ui-react'
 import Message from './Message'
+import EditMessageView from './EditMessageView'
 
 class MessagesView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      text: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.handleEditMsg = this.handleEditMsg.bind(this)
   }
   handleSubmit(event) {
     event.preventDefault()
     var date = new Date()
     var text = this.state.text
+    if (text.length === 0) return
     this.setState({
       text: ''
     })
@@ -31,6 +34,9 @@ class MessagesView extends React.Component {
     if (e.which === 13) {
       this.handleSubmit(e)
     }
+  }
+  handleEditMsg(e){
+
   }
   render() {
     let items
